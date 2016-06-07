@@ -9,6 +9,8 @@ Open Hain and type
 ```
 /hpm install hain-plugin-chromeflags
 ```
+## Requirements
+Currently this plugin expects Chrome to be in your PATH. A feature to check the default location for Google Chrome is in development.
 
 # Usage
 ```
