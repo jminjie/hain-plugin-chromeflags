@@ -1,6 +1,6 @@
 {
   "name": "hain-plugin-chromeflags",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Hain plugin to run Google Chrome with flags",
   "main": "index.js",
   "keywords": [
@@ -9,7 +9,7 @@
   "hain": {
     "prefix": "/chrome",
     "usage": "type /chrome r (restore last session) or n (incognito)",
-    "icon": "#fa fa-leaf",
+    "icon": "#fa fa-chrome",
     "redirect": "/g"
   },
   "author": "Jordan L"
