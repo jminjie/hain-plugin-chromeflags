@@ -10,7 +10,7 @@ Open Hain and type
 /hpm install hain-plugin-chromeflags
 ```
 ## Requirements
-Currently this plugin expects Chrome to be in your PATH. If chrome.exe is not found, it will attempt to run it from the default installation folder in Program Files(x86).
+Currently this plugin expects Chrome to be in your PATH. If chrome.exe is not found, it will attempt to run it from the default installation folder, C:\"Program Files (x86)"\Google\Chrome\Application\chrome.exe.
 
 # Usage
 ```
