@@ -9,6 +9,7 @@ module.exports = (pluginContext) => {
     const exec = require('child_process').exec;
    
     function search(query, res) {
+        query = query.trim();
         if (query == 'n') {
             logger.log("Starting incognito");
             res.add({
