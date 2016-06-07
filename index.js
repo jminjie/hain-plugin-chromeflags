@@ -28,7 +28,7 @@ module.exports = (pluginContext) => {
             res.add({
                 id: "noflag",
                 title: "Start Chrome <span style='width:100px;height:100px;'</span>",
-                desc: "<span style='width:100px;height:100px;'</span>",
+                desc: "Try /chrome n or /chrome r<span style='width:100px;height:100px;'</span>",
                 payload: query
             });
         }
