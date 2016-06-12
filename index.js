@@ -38,17 +38,17 @@ module.exports = (pluginContext) => {
         // If error, try full default path
         fullPath = 'C:\\"Program Files (x86)"\\Google\\Chrome\\Application\\chrome.exe';
         if (id=="incognito") {
-            var returnCode = exec("START chrome --incognito");
-            if (returnCode != 0)
+            var returnCode = exec("START chrome --incognito", function (error) {
                 exec('START '+fullPath+' --incognito');
+            });
         } else if (id == "restore") {
-            var returnCode = exec("START chrome --restore-last-session");
-            if (returnCode != 0)
+            var returnCode = exec("START chrome --restore-last-session", function (error) {
                 exec('START '+fullPath+' --restore-last-session');
+            });
         } else {
-            var returnCode = exec("START chrome" + payload);
-            if (returnCode != 0)
+            var returnCode = exec("START chrome" + payload, function (error) {
                 exec('START '+fullPath);
+            });
         }
     }
 return { search, execute };

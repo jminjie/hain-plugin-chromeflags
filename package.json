@@ -1,6 +1,6 @@
 {
   "name": "hain-plugin-chromeflags",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Hain plugin to run Google Chrome with flags (e.g. incognito or session restore)",
   "main": "index.js",
   "keywords": [
