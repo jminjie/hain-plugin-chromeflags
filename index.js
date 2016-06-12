@@ -39,18 +39,24 @@ module.exports = (pluginContext) => {
         fullPath = 'C:\\"Program Files (x86)"\\Google\\Chrome\\Application\\chrome.exe';
         if (id=="incognito") {
             var returnCode = exec("START chrome --incognito", function (error) {
-                if (error)
+                if (error) {
+                    logger.log("Error caught when starting incognito. Running with full path.");
                     exec('START '+fullPath+' --incognito');
+                }
             });
         } else if (id == "restore") {
             var returnCode = exec("START chrome --restore-last-session", function (error) {
-                if (error)
+                if (error) {
+                    logger.log("Error caught when restoring. Running with full path.");
                     exec('START '+fullPath+' --restore-last-session');
+                }
             });
         } else {
             var returnCode = exec("START chrome" + payload, function (error) {
-                if (error)
+                if (error) {
+                    logger.log("Error caught on start. Running with full path.");
                     exec('START '+fullPath);
+                }
             });
         }
     }
