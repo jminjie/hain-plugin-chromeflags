@@ -39,15 +39,18 @@ module.exports = (pluginContext) => {
         fullPath = 'C:\\"Program Files (x86)"\\Google\\Chrome\\Application\\chrome.exe';
         if (id=="incognito") {
             var returnCode = exec("START chrome --incognito", function (error) {
-                exec('START '+fullPath+' --incognito');
+                if (error)
+                    exec('START '+fullPath+' --incognito');
             });
         } else if (id == "restore") {
             var returnCode = exec("START chrome --restore-last-session", function (error) {
-                exec('START '+fullPath+' --restore-last-session');
+                if (error)
+                    exec('START '+fullPath+' --restore-last-session');
             });
         } else {
             var returnCode = exec("START chrome" + payload, function (error) {
-                exec('START '+fullPath);
+                if (error)
+                    exec('START '+fullPath);
             });
         }
     }
