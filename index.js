@@ -10,14 +10,14 @@ module.exports = (pluginContext) => {
    
     function search(query, res) {
         query = query.trim();
-        if (query == 'n') {
+        if (query == 'n' || query == '-n') {
             logger.log("Starting incognito");
             res.add({
                 id: "incognito",
                 title: "Start Chrome in incognito mode<span style='width:100px;height:100px;'</span>",
                 desc: "<span style='width:100px;height:100px;'</span>",
             });
-        } else if (query == 'r') {
+        } else if (query == 'r' || query == '-r') {
             logger.log("Starting restore");
             res.add({
                 id: "restore",
@@ -38,15 +38,15 @@ module.exports = (pluginContext) => {
         // If error, try full default path
         fullPath = 'C:\\"Program Files (x86)"\\Google\\Chrome\\Application\\chrome.exe';
         if (id=="incognito") {
-            returnCode = exec("START chrome --incognito");
+            var returnCode = exec("START chrome --incognito");
             if (returnCode != 0)
                 exec('START '+fullPath+' --incognito');
         } else if (id == "restore") {
-            returnCode = exec("START chrome --restore-last-session");
+            var returnCode = exec("START chrome --restore-last-session");
             if (returnCode != 0)
                 exec('START '+fullPath+' --restore-last-session');
         } else {
-            returnCode = exec("START chrome" + payload);
+            var returnCode = exec("START chrome" + payload);
             if (returnCode != 0)
                 exec('START '+fullPath);
         }
